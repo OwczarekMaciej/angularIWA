@@ -14,7 +14,7 @@ import {NgIf} from "@angular/common";
 })
 export class FibonacciComponent implements OnInit{
 
-  equation?: Fibonacci;
+  fibonacci?: Fibonacci;
   constructor() {
   }
 
@@ -28,9 +28,9 @@ export class FibonacciComponent implements OnInit{
       alert('Number is too big.');
     }
     else{
-      this.equation = new Fibonacci(n.valueAsNumber);
+      this.fibonacci = new Fibonacci(n.valueAsNumber);
       n.value='';
-      this.equation.calcFib();
+      this.fibonacci.calcFib();
     }
     return false;
   }
