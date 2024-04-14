@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-md-6">
+      <h1 class="text-center">My Reddit Clone</h1>
+      <hr>
+      <div>
+        <h3>Add a Post</h3>
+        <div class="title-container ">
+          <label for="title" class="mt-2">Title</label>
+          <input class="form-control" type="text" id="title" #title>
+        </div>
+        <div class="link-container">
+          <label for="link" class="mt-2">Link</label>
+          <input class="form-control" type="text" id="link" #link>
+        </div>
+        <button class="btn btn-success mt-2" (click)="addArticle(title, link)">Submit</button>
+      </div>
+      <h1 class="mt-5"><i class="fa fa-fire"></i>Popular Posts</h1>
+    </div>
+  </div>
+</div>
+<app-article *ngFor="let article of articles" [article]="article"></app-article>
+<router-outlet />

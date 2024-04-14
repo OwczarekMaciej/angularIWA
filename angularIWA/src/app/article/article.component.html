@@ -1,0 +1,21 @@
+
+<div class="containers">
+  <div class="row">
+
+    <div class="col md-6">
+      <div class="card">
+        <div>{{article.votes}}</div>
+        <div>votes</div>
+      </div>
+      <div class="details">
+        <div>
+          <a href="{{article.link}}">{{article.title}}</a>
+        </div>
+        <div class="vote">
+          <div class="btn btn-info" (click)="Upvote()"><i class="fa-regular fa-circle-up"></i>Upvote</div>
+          <div class="btn btn-danger" (click)="Downvote()">Downvote</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
