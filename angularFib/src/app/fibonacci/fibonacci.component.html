@@ -1,0 +1,14 @@
+<div class="row justify-content-center align-items-center">
+  <div class="col-md-6 text-center">
+    <div class="fibonacci-container text-center mt-5">
+      <label for="nthNumberInput">Enter nth Fibonacci number:</label>
+      <input class="form-control" id="nthNumberInput" type="number" #nthNumberInput />
+      <button class = "btn btn-success mt-4" (click)="calculate(nthNumberInput)">Calculate</button>
+    </div>
+
+    <div *ngIf="equation?.result !== undefined && equation?.result !== ''" class="result-container text-center">
+      <p class="result">The {{ equation?.getNthNumber() }}th Fibonacci number is: {{ equation?.getResult() }}</p>
+    </div>
+
+  </div>
+</div>
