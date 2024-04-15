@@ -6,8 +6,8 @@
       <button class = "btn btn-success mt-4" (click)="calculate(nthNumberInput)">Calculate</button>
     </div>
 
-    <div *ngIf="equation?.result !== undefined && equation?.result !== ''" class="result-container text-center">
-      <p class="result">The {{ equation?.getNthNumber() }}th Fibonacci number is: {{ equation?.getResult() }}</p>
+    <div *ngIf="fibonacci?.result !== undefined && fibonacci?.result !== ''" class="result-container text-center">
+      <p class="result">The {{ fibonacci?.getNthNumber() }}th Fibonacci number is: {{ fibonacci?.getResult() }}</p>
     </div>
 
   </div>
