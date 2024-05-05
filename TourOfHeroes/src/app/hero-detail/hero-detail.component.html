@@ -3,7 +3,7 @@
   <div><span>id: </span>{{ hero.id }}</div>
   <div>
     <label for="hero-name">Hero name: </label>
-    <input #box (keyup.enter)="onEnter(box.value)" (blur)="update(box.value)" id="hero-name" [(ngModel)]="hero.name" placeholder="name">
+    <input #box (keyup.enter)="onEnter(box.value)" (blur)="update(box.value)" (keydown)="onKeyUp($event)" id="hero-name" [(ngModel)]="hero.name" placeholder="name">
     <p>{{ value }}</p>
   </div>
 </div>

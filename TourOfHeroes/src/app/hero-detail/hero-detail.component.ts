@@ -45,14 +45,29 @@ export class HeroDetailComponent implements OnInit{
     this.value = value;
   }
   fontSize: number = 16;
-  @HostListener('window:keyup', ['$event'])
-  keyEvent(event: KeyboardEvent) {
+  onKeyUp(event: KeyboardEvent) {
     if (event.key === 'ArrowUp') {
-      this.fontSize++;
+      this.increaseFontSize();
+    } else if (event.key === 'ArrowDown') {
+      this.decreaseFontSize();
     }
-    else if(event.key == 'ArrowDown') {
+  }
+  increaseFontSize() {
+    this.fontSize++;
+  }
+
+  decreaseFontSize() {
+    if (this.fontSize > 1) {
       this.fontSize--;
     }
-
   }
+
+  // @HostListener('window:keyup', ['$event'])
+  // keyEvent(event: KeyboardEvent) {
+  //   if (event.key === 'ArrowUp') {
+  //     this.fontSize++; // Increase font size by one
+  //   } else if (event.key === 'ArrowDown' && this.fontSize > 1) {
+  //     this.fontSize--; // Decrease font size by one
+  //   }
+  // }
 }
