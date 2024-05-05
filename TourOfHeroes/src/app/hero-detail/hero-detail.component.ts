@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input, HostListener} from '@angular/core';
 import {Hero} from "../heroes/hero";
 import {FormsModule} from "@angular/forms";
 import {CommonModule, NgIf} from "@angular/common";
@@ -36,5 +36,23 @@ export class HeroDetailComponent implements OnInit{
 
   goBack(): void {
     this.location.back();
+  }
+  value = '';
+  onEnter(value: string) {
+    this.value = value;
+  }
+  update(value: string) {
+    this.value = value;
+  }
+  fontSize: number = 16;
+  @HostListener('window:keyup', ['$event'])
+  keyEvent(event: KeyboardEvent) {
+    if (event.key === 'ArrowUp') {
+      this.fontSize++;
+    }
+    else if(event.key == 'ArrowDown') {
+      this.fontSize--;
+    }
+
   }
 }

@@ -1,9 +1,10 @@
 <div *ngIf="hero">
-  <h2>{{hero.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{hero.id}}</div>
+  <h2 [style.font-size.px]="fontSize">{{ hero.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{ hero.id }}</div>
   <div>
     <label for="hero-name">Hero name: </label>
-    <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
+    <input #box (keyup.enter)="onEnter(box.value)" (blur)="update(box.value)" id="hero-name" [(ngModel)]="hero.name" placeholder="name">
+    <p>{{ value }}</p>
   </div>
 </div>
 
